@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="logs/Audit-${date:yyyy-MM-dd}.log"
+                     filePattern="logs/Audit.%d{yyyy-MM-dd}.%i.log">
+            <!--            fileName="logs/BinMasterCSM.log" --><!--            filePattern="logs/archived/BinMasterCSM.%d{yyyy-MM-dd}.%i.log">-->
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <!--            <DefaultRolloverStrategy max="7"/>-->
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.aci.BinMasterCSM" level="trace" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
