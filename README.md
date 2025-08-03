@@ -17,3 +17,5 @@ All invalid records are logged into a designated log file for further review and
 5. Threshold-Based Rollback:
 If the number of invalid records exceeds a predefined threshold, none of the data (including valid rows) will be saved to the database.
 This ensures data integrity and prevents partial data uploads.
+
+Technologies Used - Java, SpringBoot, PostgreSQL.
